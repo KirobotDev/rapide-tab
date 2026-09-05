@@ -1,9 +1,3 @@
-Oui 👍 Pour **GitHub**, on peut faire un README beaucoup plus propre et professionnel, avec badges, aperçu, installation, configuration, architecture et roadmap.
-
- Voici le `README.md` prêt à copier dans ton dépôt GitHub :
-
- README.md — Fastistance GitHub
-
 # 🤖 Fastistance
 
  > **Your terminal, but smarter.**
