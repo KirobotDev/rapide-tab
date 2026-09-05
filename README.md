@@ -1,72 +1,51 @@
 🤖 Fastistance
 
-Fastistance est un assistant personnel développé en Python, conçu pour regrouper plusieurs outils utiles dans une seule application.
+Fastistance est un assistant personnel développé en Python.
 
-Le projet a commencé comme une application CLI (terminal) et évolue progressivement vers une interface graphique moderne.
+Le projet a commencé comme un assistant CLI et évolue progressivement vers une interface graphique moderne.
 
-🚧 Projet en développement
+🚧 Projet actuellement en développement
 
 ✨ Fonctionnalités
 
-Fastistance propose actuellement plusieurs fonctionnalités :
-
 🌤️ Météo
 
-Recherche d'une ville
-Température actuelle
+Consulte la météo actuelle d'une ville :
+
+Température
 Humidité
 Vitesse du vent
 
 📊 Performances système
 
-Informations de la machine avec fastfetch
+Affiche les informations de la machine avec fastfetch.
 
 🎮 Discord
 
-Ouverture rapide de Discord
+Ouvre rapidement Discord dans le navigateur.
 
 🌐 Google
 
-Ouverture rapide de Google
+Ouvre rapidement Google.
 
 🤖 Intelligence artificielle
 
-Pose de questions à une IA directement depuis Fastistance
-Utilisation de l'API Groq avec une interface compatible OpenAI
+Pose des questions à une IA directement depuis Fastistance.
 
 🖥️ Interface graphique
 
-Navigation avec une sidebar
-Pages dédiées aux différentes fonctionnalités
-Interface destinée à remplacer progressivement le terminal
-🖥️ Architecture graphique
+Une interface graphique est actuellement en développement.
 
-L'objectif de Fastistance est de proposer une interface similaire à :
+🛠️ Technologies
+🐍 Python
+🎨 Tkinter
+🤖 OpenAI SDK
+⚡ Groq API
+🌤️ Open-Meteo API
+🌐 Requests
+💻 Fastfetch
 
-┌──────────────────────────────────────────────────────────────┐
-│  🤖 FASTISTANCE                              ⚙️              │
-├───────────────┬──────────────────────────────────────────────┤
-│               │                                              │
-│  🏠 Accueil   │       Bienvenue sur Fastistance              │
-│               │                                              │
-│  🌤️ Météo     │   ┌──────────┐ ┌──────────┐ ┌──────────┐   │
-│               │   │ 🌤️       │ │ 📊       │ │ 🤖       │   │
-│  📊 Perform.  │   │ Météo    │ │ Système  │ │ IA       │   │
-│               │   └──────────┘ └──────────┘ └──────────┘   │
-│  🎮 Discord   │                                              │
-│               │   ┌──────────┐ ┌──────────┐                 │
-│  🌐 Google    │   │ 🎮       │ │ 🌐       │                 │
-│               │   │ Discord  │ │ Google   │                 │
-│  🤖 IA        │   └──────────┘ └──────────┘                 │
-│               │                                              │
-│  ⚙️ Paramètres│                                              │
-│               │                                              │
-└───────────────┴──────────────────────────────────────────────┘
-
-📁 Structure du projet
-
-Le projet est organisé pour séparer l'interface graphique de la logique de chaque fonctionnalité.
-
+📁 Architecture
 fastistance/
 │
 ├── main.py
@@ -84,273 +63,161 @@ fastistance/
 │
 └── .venv/
 
-Description
-Fichier	Rôle
-main.py	Point d'entrée de l'application
-app/gui.py	Interface graphique
-app/ai.py	Gestion de l'intelligence artificielle
-app/meteo.py	Gestion de la météo
-app/system.py	Informations système
-app/utils.py	Fonctions utilitaires
-requirements.txt	Dépendances Python
-.gitignore	Fichiers ignorés par Git
-🛠️ Technologies
-
-Fastistance utilise principalement :
-
-🐍 Python
-🎨 Tkinter pour l'interface graphique
-🤖 OpenAI Python SDK
-⚡ Groq API
-🌤️ Open-Meteo API
-🌐 Requests
-💻 Fastfetch
-📦 Installation
-1. Cloner le projet
+🚀 Installation
+1️⃣ Cloner le projet
 git clone https://github.com/USERNAME/fastistance.git
 cd fastistance
 
-
-Remplace USERNAME par ton nom d'utilisateur GitHub.
-
-2. Créer un environnement virtuel
+2️⃣ Créer l'environnement virtuel
 python3 -m venv .venv
 
-3. Activer l'environnement virtuel
-Linux / macOS
+3️⃣ Activer l'environnement
+
+Linux / macOS :
+
 source .venv/bin/activate
 
-Windows
+
+Windows :
+
 .venv\Scripts\activate
 
-4. Installer les dépendances
+4️⃣ Installer les dépendances
 python -m pip install -r requirements.txt
 
 🔑 Configuration de l'IA
 
-Fastistance utilise l'API Groq pour les fonctionnalités d'intelligence artificielle.
+Fastistance utilise Groq pour ses fonctionnalités d'intelligence artificielle.
 
-⚠️ Sécurité
+⚠️ Ne mets jamais ta clé API directement dans le code.
 
-Ne mets jamais ta clé API directement dans ton code.
-
-❌ Mauvais :
+❌ À ne pas faire :
 
 api_key = "gsk_xxxxxxxxx"
 
 
-✅ Recommandé :
+✅ Utilise plutôt une variable d'environnement :
 
 api_key = os.environ.get("GROQ_API_KEY")
 
-Linux / macOS
 
-Définis ta clé API :
+Sous Linux / macOS :
 
 export GROQ_API_KEY="TA_CLE_API"
 
+▶️ Lancer Fastistance
 
-Puis lance l'application :
+Une fois l'installation terminée :
 
+source .venv/bin/activate
 python main.py
-
-
-Pour une configuration permanente avec zsh, tu peux ajouter la variable dans :
-
-~/.zshrc
-
-
-Puis :
-
-source ~/.zshrc
-
-🤖 IA
-
-Fastistance utilise le SDK Python compatible avec l'API OpenAI pour communiquer avec Groq.
-
-Exemple :
-
-from openai import OpenAI
-import os
-
-client = OpenAI(
-    api_key=os.environ.get("GROQ_API_KEY"),
-    base_url="https://api.groq.com/openai/v1"
-)
-
-response = client.responses.create(
-    model="openai/gpt-oss-20b",
-    input="Bonjour Fastistance !"
-)
-
-print(response.output_text)
 
 🌤️ Météo
 
-La fonctionnalité météo utilise Open-Meteo.
+Fastistance utilise Open-Meteo pour récupérer les données météorologiques.
 
-L'utilisateur peut entrer une ville :
+Exemple :
+
+FASTISTANCE > meteo
 
 Ville : Paris
-
-
-Fastistance récupère ensuite :
 
 🌍 Paris, France
 🌡️ Température : 18 °C
 💧 Humidité : 70 %
 💨 Vent : 12 km/h
 
+🤖 Intelligence artificielle
 
-Aucune clé API n'est nécessaire pour Open-Meteo.
+La commande IA permet de discuter avec le modèle directement depuis Fastistance.
 
-📊 Performances
+FASTISTANCE > ai
 
-Fastistance peut utiliser fastfetch pour afficher les informations système.
+Pose-moi ta question :
 
-Installation sur Debian / Ubuntu :
+> Explique-moi Python
 
-sudo apt install fastfetch
-
-
-Puis :
-
-fastfetch
-
-🚀 Lancement
-
-Une fois l'environnement configuré :
-
-source .venv/bin/activate
-python main.py
+🤖 Python est un langage de programmation...
 
 🗺️ Roadmap
-✅ Déjà disponible
+✅ Disponible
  🌤️ Météo
  📊 Informations système
- 🎮 Ouverture de Discord
- 🌐 Ouverture de Google
+ 🎮 Discord
+ 🌐 Google
  🤖 Intelligence artificielle
- ⌨️ Version CLI
+ ⌨️ Interface CLI
 🔨 En développement
  🖥️ Interface graphique
  🏠 Dashboard
  📱 Sidebar
- 💬 Interface de chat IA
- ⚙️ Page de paramètres
+ 💬 Chat IA
+ ⚙️ Paramètres
  🌙 Mode sombre
- 🎨 Interface plus moderne
-🔮 Futures fonctionnalités
+ 🎨 Interface moderne
+🔮 Prévu
  🧠 Tool Calling
  🗣️ Assistant vocal
  🔍 Recherche Internet
  📁 Gestion des fichiers
- 💻 Exécution de commandes système
+ 💻 Commandes système
  ⏱️ Timer
  📋 Historique des conversations
  🔌 Système de plugins
  🎵 Contrôle multimédia
  🔔 Notifications
- 🧩 Extensions
-🧠 Architecture prévue
+🧠 Objectif
 
-L'objectif à long terme est de transformer Fastistance en un véritable assistant personnel.
+L'objectif de Fastistance est de devenir un véritable assistant personnel.
 
-                         ┌─────────────────┐
-                         │   FASTISTANCE   │
-                         └────────┬────────┘
-                                  │
-                         ┌────────▼────────┐
-                         │   Interface GUI │
-                         └────────┬────────┘
-                                  │
-              ┌───────────────────┼───────────────────┐
-              │                   │                   │
-        ┌─────▼─────┐       ┌─────▼─────┐       ┌────▼─────┐
-        │  Météo    │       │    IA     │       │ Système  │
-        └───────────┘       └─────┬─────┘       └──────────┘
-                                  │
-                            ┌─────▼─────┐
-                            │   Groq    │
-                            └───────────┘
+À terme, l'IA pourra comprendre les demandes de l'utilisateur et utiliser automatiquement les outils disponibles.
 
-
-À terme, l'IA pourra comprendre une demande et choisir automatiquement l'outil approprié.
-
-Par exemple :
-
-Utilisateur :
-"Quelle est la météo à Paris ?"
-
-              ↓
-
-            🤖 IA
-
-              ↓
-
-          🌤️ METEO()
-
-              ↓
-
-       Paris : 18 °C
-
-
-Ou :
-
-Utilisateur :
-"Ouvre Discord"
-
-              ↓
-
-            🤖 IA
-
-              ↓
-
-        🎮 DISCORD()
-
-              ↓
-
-       Discord ouvert
+Utilisateur
+     │
+     ▼
+🤖 IA
+     │
+     ├── 🌤️ Météo
+     ├── 💻 Système
+     ├── 🌐 Web
+     ├── 🎮 Discord
+     └── 📁 Fichiers
 
 🔒 Sécurité
 
-Les clés API et informations sensibles ne doivent jamais être envoyées sur GitHub.
+⚠️ Ne partage jamais tes clés API.
 
-Le fichier .gitignore doit notamment contenir :
+Si une clé API est publiée accidentellement :
 
+Révoque immédiatement la clé.
+Génère une nouvelle clé.
+Utilise une variable d'environnement.
+Ajoute .env à ton .gitignore.
 .venv/
 .env
 __pycache__/
 *.pyc
 
-
-Si une clé API est accidentellement publiée, elle doit être révoquée immédiatement.
-
 🤝 Contribution
 
-Les contributions sont les bienvenues.
+Les contributions sont les bienvenues !
 
-1. Fork le projet
-2. Crée une branche
 git checkout -b feature/ma-fonctionnalite
 
-3. Fais tes modifications
-4. Commit
-git add .
-git commit -m "Add: ma nouvelle fonctionnalité"
 
-5. Push
+Puis :
+
+git add .
+git commit -m "Add: ma fonctionnalité"
 git push origin feature/ma-fonctionnalite
 
-6. Ouvre une Pull Request
-📜 Licence
 
-Ce projet est actuellement en développement.
-
-La licence sera définie ultérieurement.
+Ensuite, ouvre une Pull Request.
 
 ⭐ Fastistance
 
 Your terminal, but smarter. 🤖
 
-Fastistance a pour objectif de devenir un assistant personnel simple, rapide et personnalisable directement depuis ton ordinateur.
+🚧 Fastistance est encore en développement.
+
+De nombreuses fonctionnalités sont prévues pour transformer progressivement le projet en un assistant personnel complet.
